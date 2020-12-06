@@ -1,0 +1,1 @@
+Wegen, laut Internetquellen, sogenannten Stackbegrenzung, Aufruf mit grosse Zahlen kann zu Fehler "StackOverflowError" fuehren.

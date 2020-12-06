@@ -1,0 +1,7 @@
+
+
+Ist es sinnvoll, die Klasse Entry als innere Klasse der Klasse Buffer zu realisieren? Wenn ja, sollte Entry eine statische oder eine nichtstatische innere Klasse sein? Begründen Sie Ihre Antworten!
+______
+______
+Es ist sinvoll, die Klasse Entry als innere Klasse der Klasse Buffer zu realisieren, weil Klasse Entry nur fuer Erzeugung der Objekten der Klasse Buffer benuetzt ist. Er kann static sein, weil er kein Zugriff auf nicht statische Elemente von umgebende Klasse braucht.
+

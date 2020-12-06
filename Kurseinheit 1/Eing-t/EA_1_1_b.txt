@@ -1,0 +1,5 @@
+"Fehler!" - kommt fuer Randwerten des Datentyps int, naemlich +-2147483646 und +-2147483647, denn beim Randwerten, Addierung und Substrahierung funktioniert folgendermassen: Int.MAX_Wert + 1 == Int.MIN_Wert & Int.MIN_Wert - 1 == Int.MAX_Wert .
+
+"Das kann nicht sein!" - das kann nur dann passieren, wann 'ergebnis' gleich 2 ist und ist weiter um 2 substrahiert  - was kann aber laut Anweisungen nie der Tat sein.
+
+Nicht abgefangene Exception - kann dann eintreten wenn zu Klass uebergebende Parameter nicht des Typs 'int' ist, oder auserhalb Wertebereich liegt.

@@ -1,0 +1,108 @@
+
+a) Welche Datentypen werden verwendet? Welche davon sind Basisdatentypen?
+
+    Foo, Bar, Object, int, char, string. Davon "int" und "char" sind Basisdatentypen.
+
+
+b) Welche Konstanten enthält das Programm?
+
+    42, 'c';
+
+
+c) Welche benannten Konstanten sind enthalten?
+
+    keine
+
+
+d) Welche Variablendeklarationen finden Sie?
+
+    "private int x;" und "private static char c = 'c';"
+
+
+e) Welche formalen Parameter können Sie entdecken?
+
+    "x" bei
+        Foo(int x) {
+            this.x = x;
+        }
+
+    "foo" bei
+            void m(Foo foo) {
+                y = new Object();
+            }
+
+    "foo" bei
+            void m(String foo) {
+                y = foo;
+            }
+
+
+f) Welche Attribute sind zu finden? Unterscheiden Sie in Objekt- und Klassenattribute.
+
+    Klassenattribute:
+
+        Fuer Klass "Foo":
+            private int x;
+            private static char c = 'c';
+
+        Fuer inneren Klass "Bar":
+                Object y;
+
+
+    Objektattribute:
+
+        Beim Konstruktor "Foo(int x)":
+        this.x = x;
+
+        Beim Konstruktor "Foo()":
+        x = 42;
+
+        Bei Methoden "void m(Foo foo)", "void m(String foo)", "Bar()" der inneren Klasse "Bar":
+        y
+
+
+g) Welche Konstruktoren sind zu finden?
+
+    Bei Klasse "Foo":
+        Foo(int x) {
+            this.x = x;
+        }
+
+        Foo() {
+            x = 42;
+        }
+
+    Bei inneren Klasse "Bar":
+            Bar() {
+                y = new Object();
+            }
+
+
+h) Welche Methoden sind zu finden? Unterscheiden Sie in Objekt- und Klassenmethoden.
+
+    Objektmethoden:
+        Object z() {
+            return new String();
+        }
+
+
+    Klassenmethoden:
+
+            void m(Foo foo) {
+                y = new Object();
+            }
+
+            void m(String foo) {
+                y = foo;
+            }
+
+
+i) Wo finden Überladungen statt?
+
+    Beim Klasse "Foo" findet Überladung von Konstruktoren statt: Es gibt 2 Konstruktoren "Foo", aber sie unterscheiden sich in Eingabeparametern.
+
+    Beim inneren Klasse "Bar" findet Überladung von Methoden statt: Es gibt 2 Methoden "m", aber sie unterscheiden sich auch in Eingabeparametern.
+
+j) In welchen Methoden kann bzw. könnte man auf das Attribut y zugreifen?
+
+    Beim beiden Methoden "m" der inneren Klasse "Bar". Beim  Konstruktor "Bar()" wird einfach Objekt der Klasse "Bar" mit Attribut "y" instantiiert.

@@ -1,0 +1,5 @@
+Der Compiler meldet genau einen Fehler und zwar bzgl. der Zeile, in der auf x zugegriffen wird.
+
+"x" ist kein Klassenattribut (er fehlt dazu Schluessewort "static"), und kann nicht waehrend Übersetzungszeit zugegriffen sein, aber nur durch seinem schon erzeugten Instanz.
+
+

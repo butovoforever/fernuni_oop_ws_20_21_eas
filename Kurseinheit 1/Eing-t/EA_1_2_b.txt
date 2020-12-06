@@ -1,0 +1,4 @@
+Komplexitaet - denn ganze Menge der Eigenschaften von verschiedene Figuren, sollen in eine einzige Skript realisiert sein. Es macht die Programm ganz schnell sehr unuebersichtlich. 
+
+Skalierbarkeit - wenn wir Eigenschaft einer der Figuren aendern, soll die Programm in mehrere Orten aendern.  Oder neue Eigenschaft hinzufuegen - dann mussen wir ein neuen ganzen Block fuer diese Eigenschaft beschreiben. 
+
