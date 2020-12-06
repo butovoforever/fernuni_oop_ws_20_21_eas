@@ -51,7 +51,7 @@ class Buffer {
 	
 	//JETZT DIE METHODEN
 	
-	private class Entry {
+	private static class Entry {
 		private String element;
 		private Entry next;
 		private Entry previous;
