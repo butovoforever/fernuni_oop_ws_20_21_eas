@@ -25,6 +25,8 @@ hs_err_pid*
 # extra files
 *.pdf
 *.docx
+*.xml
+*.iml
 
 # extra folders
 /.metadata/

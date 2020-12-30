@@ -1,4 +1,4 @@
-package ea2_1;
+package muster_aus_ea1_4;
 
 public class GameOfLife_1_4 {
     boolean[][] feld = {

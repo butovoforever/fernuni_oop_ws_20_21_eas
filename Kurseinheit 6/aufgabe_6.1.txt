@@ -1,0 +1,46 @@
+// füge methode interrupt hinzu, und boolean isRunning als flag, dieses wird als while-bedingung benutzt
+
+import java.io.IOException;
+
+public class Warum {
+    public static void main(String[] argv) {
+        Test t = new Test();
+        t.start();
+        t.dotry();
+        t.interrupt();
+    }
+}
+
+class Test extends Thread {
+    boolean isRunning = true;
+    @Override
+    public void run() {
+        while (isRunning) {
+            System.out.println("Hallo, ich komme.");
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                // Sollte nicht geschehen, zur Sicherheit Ausgabemeldung
+                System.out.println("Beim Schlafen unterbrochen");
+            }
+        }
+    }
+    
+    
+    
+    @Override
+    public void interrupt() {
+        isRunning = false;
+    }
+    
+    // Zum Beenden Enter-Taste druecken
+    void dotry() {
+        try {
+            System.in.read(); // Blockiert bis Zeile eingegeben
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Ich gehe. Auf Wiedersehen!");
+    }
+}
