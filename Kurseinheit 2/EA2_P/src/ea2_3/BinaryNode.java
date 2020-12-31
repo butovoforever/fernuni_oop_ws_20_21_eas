@@ -8,7 +8,16 @@ class BinaryNode {
         value = v;
     }
 
-    public boolean contains(int v) { /* s. a) ... */ }
+    public boolean contains(int v) {
+        if (value == v) {
+            return true;
+        } else if (leftSon != null & v <= leftSon.value) {
+            leftSon.contains(v);
+        } else if (rightSon != null) {
+            rightSon.contains(v);
+        }
+        return false;
+    }
 
     public void insert(int v) { /* s. b) ... */ }
 

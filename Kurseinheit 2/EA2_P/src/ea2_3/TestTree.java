@@ -10,5 +10,7 @@ public class TestTree {
         myTree.insert(10);
 
         myTree.inorder();
+
+
     }
 }
