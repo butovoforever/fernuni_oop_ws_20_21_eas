@@ -12,12 +12,12 @@ public class TestTree {
 //        myTree.inorder();
 //        System.out.println();
 
-        System.out.println(myTree.value);
-        System.out.println(myTree.leftSon.value);
-        System.out.println(myTree.leftSon.leftSon.value);
-        System.out.println(myTree.rightSon.value);
-        System.out.println(myTree.rightSon.leftSon.value);
-        System.out.println(myTree.rightSon.leftSon.leftSon.value);
+//        System.out.println(myTree.value);
+//        System.out.println(myTree.leftSon.value);
+//        System.out.println(myTree.leftSon.leftSon.value);
+//        System.out.println(myTree.rightSon.value);
+//        System.out.println(myTree.rightSon.leftSon.value);
+//        System.out.println(myTree.rightSon.leftSon.leftSon.value);
 
         System.out.println();
         System.out.println();

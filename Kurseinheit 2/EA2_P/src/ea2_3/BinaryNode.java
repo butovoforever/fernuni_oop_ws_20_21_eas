@@ -1,10 +1,10 @@
 package ea2_3;
 
 class BinaryNode {
-    BinaryNode leftSon, rightSon;
-    int value;
-//    private BinaryNode leftSon, rightSon;
-//    private int value;
+//    BinaryNode leftSon, rightSon;
+//    int value;
+    private BinaryNode leftSon, rightSon;
+    private int value;
 
     public BinaryNode(int v) {
         value = v;
@@ -13,9 +13,13 @@ class BinaryNode {
     public boolean contains(int v) {
         if (value == v) {
             return true;
-        } else if (leftSon != null & v <= leftSon.value) {
+//        } else if (leftSon != null & v <= leftSon.value) {
+//            leftSon.contains(v);
+//        } else if (rightSon != null) {
+//            rightSon.contains(v);
+//        }
+        } else {
             leftSon.contains(v);
-        } else if (rightSon != null) {
             rightSon.contains(v);
         }
         return false;
