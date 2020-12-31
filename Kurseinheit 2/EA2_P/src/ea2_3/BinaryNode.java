@@ -22,19 +22,25 @@ class BinaryNode {
     }
 
     public void insert(int v) {
-        if (Integer.toString(value) != null & value != v) {
+        if (value != v) {
             if (v < value) {
-                if(Integer.toString(leftSon.value) != null) {
+                if(leftSon != null) {
                  leftSon.insert(v);
                 } else {
-                    leftSon.value = v;
+                    leftSon = new BinaryNode(v);
                 }
             } else {
-
+                if(rightSon != null) {
+                    rightSon.insert(v);
+                } else {
+                    rightSon = new BinaryNode(v);
+                }
             }
         }
     }
 
-    public void inorder() { /* s. c) ... */ }
+    public void inorder() {
+        BinaryNode Helper = this;
+    }
 }
 
