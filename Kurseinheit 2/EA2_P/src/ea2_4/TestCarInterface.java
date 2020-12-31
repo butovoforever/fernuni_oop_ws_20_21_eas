@@ -9,10 +9,12 @@ public class TestCarInterface {
         Car NeuesAuto = NewCarFactory.giveMeACar();
         System.out.println(NeuesAuto.readMotorPowerInKiloWatt());
 
-        // c)
-        
+        // c) Fuer Car Objekt, der Supertyp der RealCar ist, kann ich Methode tunePower() von RealCar nicht zugreifen. Somit kann man Typconventierung anwenden und nocmal versuchen.
 
+        RealCar NeuesAuto2 = (RealCar)NeuesAuto;
+        NeuesAuto2.tunePower();
 
+        System.out.println(NeuesAuto.readMotorPowerInKiloWatt());
 
     }
 }
