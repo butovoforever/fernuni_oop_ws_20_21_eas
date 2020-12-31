@@ -18,10 +18,22 @@ class BinaryNode {
 //        } else if (rightSon != null) {
 //            rightSon.contains(v);
 //        }
-        } else {
-            leftSon.contains(v);
-            rightSon.contains(v);
+
+//        } else {
+//            leftSon.contains(v);
+//            rightSon.contains(v);
+//        }
+
+        } else if (leftSon != null & v < value) {
+//            System.out.println(leftSon.value);
+//            System.out.println(v == leftSon.value);
+            return leftSon.contains(v);
+        } else if (rightSon != null) {
+//            System.out.println(rightSon.value);
+//            System.out.println(v == rightSon.value);
+            return rightSon.contains(v);
         }
+
         return false;
     }
 
