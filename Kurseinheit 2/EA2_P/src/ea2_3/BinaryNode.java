@@ -1,8 +1,10 @@
 package ea2_3;
 
 class BinaryNode {
-    private BinaryNode leftSon, rightSon;
-    private int value;
+    BinaryNode leftSon, rightSon;
+    int value;
+//    private BinaryNode leftSon, rightSon;
+//    private int value;
 
     public BinaryNode(int v) {
         value = v;
@@ -19,7 +21,19 @@ class BinaryNode {
         return false;
     }
 
-    public void insert(int v) { /* s. b) ... */ }
+    public void insert(int v) {
+        if (Integer.toString(value) != null & value != v) {
+            if (v < value) {
+                if(Integer.toString(leftSon.value) != null) {
+                 leftSon.insert(v);
+                } else {
+                    leftSon.value = v;
+                }
+            } else {
+
+            }
+        }
+    }
 
     public void inorder() { /* s. c) ... */ }
 }
