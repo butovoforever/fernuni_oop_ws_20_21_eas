@@ -5,7 +5,11 @@ public class TestGraph {
         Graph testingGraph = new Graph(2);
         testingGraph.nodes[0] = ("a");
         testingGraph.nodes[1] = ("a");
-        testingGraph.getNode(25);
+        try {
+            testingGraph.getNode(25);
+        } catch (GraphException e) {
+            System.out.println("bad index");
+        }
 
 
 

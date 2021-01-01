@@ -27,6 +27,7 @@ public class Graph {
         // ...liefert den Namen des Knotens an der
         // durch den Wert des Parameters bezeichneten Position,
         // wenn diese einen Knoten bezeichnet; sonst eine GraphException
+
         if (index >= nodes.length | index < 0)
             throw new GraphException();
         return nodes[index];
