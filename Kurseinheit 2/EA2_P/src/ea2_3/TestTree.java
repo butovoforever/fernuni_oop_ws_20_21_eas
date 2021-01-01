@@ -38,6 +38,7 @@ public class TestTree {
         System.out.println();
         System.out.println("10 " +myTree.contains(10));
 
+        myTree.inorder();
 
     }
 }

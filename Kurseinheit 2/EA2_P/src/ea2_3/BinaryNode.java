@@ -1,5 +1,7 @@
 package ea2_3;
 
+import java.sql.SQLOutput;
+
 class BinaryNode {
 //    BinaryNode leftSon, rightSon;
 //    int value;
@@ -56,7 +58,22 @@ class BinaryNode {
     }
 
     public void inorder() {
-        BinaryNode Helper = this;
+        //BinaryNode Helper = this;
+        if (leftSon != null) {
+            leftSon.inorder();
+            System.out.println(value);
+            if (rightSon != null) {
+                rightSon.inorder();
+            }
+        } else {
+            System.out.println(value);
+            if (rightSon != null) {
+                rightSon.inorder();
+            }
+        }
+
+
+
     }
 }
 
