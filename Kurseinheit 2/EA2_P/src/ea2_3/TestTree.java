@@ -8,6 +8,7 @@ public class TestTree {
         myTree.insert(12);
         myTree.insert(11);
         myTree.insert(10);
+        myTree.insert(14);
 
 //        myTree.inorder();
 //        System.out.println();
