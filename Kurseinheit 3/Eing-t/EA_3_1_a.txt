@@ -1,0 +1,7 @@
+Sei der Liste mit folgenden Elementen (Knoten des Teilgraphens): (Deutschland, Frankreich, Spanien).
+
+Ausgehend von deren Positionen in der Liste und deren Adjazenz in Teilgraphen, sieht dann die Adjazenzmatrix so aus:
+
+false, true, false
+true, false, true
+false, true, false

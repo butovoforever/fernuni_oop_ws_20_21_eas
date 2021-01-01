@@ -1,0 +1,1 @@
+Falls uebergebener Argument (d.h. Knoten) in entsprechenden Graph als Knoten nicht enthalten ist.
