@@ -1,0 +1,3 @@
+Bei jeden der verfuegbaren Entwurfmethoden des Graphensobjekt, wird Anzahl der Knoten vorgegeben (festgelegt) und kann nicht geandert sein. Deswegen, bei jeden Hinzufuegen/Loeschen der Knoten muss ein neuer Graphensobjekt erstellt sein.
+
+Was Loeschen der Kanten angeht, unterscheidet es sich von Hinzufuegen der Kanten nur dadurch, dass entsprechenden Elementen der Ajazenzmatrix statt "wahr" auf "falsch" geaendert sein muessen.
