@@ -1,7 +1,22 @@
 package ea3_2;
 
+enum Dienstgraden {
+    HELFER("Helfer"),
+    TRUPPFÜHRER("Truppführer"),
+    GRUPPENFÜHRER("Gruppenführer"),
+    ZUGTRUPPFÜHRER("Zugtruppführer"),
+    ZUGFÜHRER("Zugführer");
+
+    private final String Name;
+
+    private Dienstgraden(String name){
+        this.Name = name;
+    }
+
+        }
+
 public class Aufzählungstypen_ENUM {
-    
+
 
     /*
      * Erwartete Ausgabe ist:
