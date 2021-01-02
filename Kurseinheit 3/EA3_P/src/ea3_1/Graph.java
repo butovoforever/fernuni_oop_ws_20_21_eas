@@ -61,7 +61,7 @@ public class Graph {
     public boolean isAdjacent(int index1, int index2) throws GraphException {
         // ...liefert "wahr", wenn die Knoten mit Index
         // index1 und index2 benachbart sind, sonst "falsch".
-        if (adjacencyMatrix[index1][index2] == true & adjacencyMatrix[index2][index1] == true) {
+        if (adjacencyMatrix[index1][index2] == true && adjacencyMatrix[index2][index1] == true) {
             return true;
         } else {
             return false;
@@ -72,6 +72,7 @@ public class Graph {
     public boolean isAdjacent(String node1, String node2) throws GraphException {
         // ...liefert "wahr", wenn die Laender mit Namen
         // node1 und node2 benachbart sind, sonst "falsch".
+        return isAdjacent(indexOf(node1),indexOf(node2));
     }
 
 
@@ -79,6 +80,13 @@ public class Graph {
         // ...fuegt Kante zwischen den Knoten mit
         // Index index1 und index2 ein, wenn diese
         // Indizes von Laendern sind; sonst eine GraphException.
+        if (index1 < this.nodes.length && index2 < this.nodes.length) {
+            adjacencyMatrix[index1][index2] = true;
+            adjacencyMatrix[index2][index1] = true;
+        } else {
+            throw new GraphException();
+        }
+
     }
 
 
@@ -86,6 +94,7 @@ public class Graph {
         // ...fuegt Kante zwischen den Knoten mit
         // Laendernamen node1 und node2 ein, wenn diese
         // Knoten des Graphen bezeichnen; sonst eine GraphException.
+        addEdge(indexOf(node1),indexOf(node2));
     }
 
 }
