@@ -1,0 +1,25 @@
+package ea3_3;
+
+class Fahrzeug {
+
+}
+
+interface Landtransport {
+
+}
+
+interface Schiffahrttransport {
+
+}
+
+class Auto extends Fahrzeug implements Landtransport {
+
+}
+
+class Boot extends Fahrzeug implements Schiffahrttransport {
+
+}
+
+class Amphibienfahrzeug extends Fahrzeug implements Landtransport, Schiffahrttransport {
+
+}

@@ -1,0 +1,14 @@
+a)
+Sei bei Klasse Amphibienfahrzeug Methoden fuer Schwimmen und Fahren implementiert. Dann sind dieselbe Methoden fuer alle Klassen die von Amphibienfahrzeug erben auch implementiert. Wenn Auto und Boot von Amphibienfahrzeug  erben, haben sie ueberfluessige Methoden und genau fuer Schwimmen bzw. fuer Fahren.
+
+b)
+Auto und Boot erben von Fahrzeug, und Amphibienfahrzeug erbt von beide Auto und Boot.
+
+c)
+Sei auch zwei Interfaces: Landtransport, Schiffahrttransport.
+Auto und Boot erben von Fahrzeug und implementieren Landtransport bzw. Schiffahrttransport.
+Semiamphibienfahrzeug erbt dann von Fahrzeug und implementiert beide Landtransport und Schiffahrttransport.
+
+
+
+

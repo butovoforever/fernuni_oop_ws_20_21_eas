@@ -2,20 +2,28 @@ package ea3_2;
 
 enum Dienstgraden {
     HELFER("Helfer"),
-    TRUPPFÜHRER("Truppführer"),
-    GRUPPENFÜHRER("Gruppenführer"),
-    ZUGTRUPPFÜHRER("Zugtruppführer"),
-    ZUGFÜHRER("Zugführer");
+    TRUPPFUEHRER("Truppführer"),
+    GRUPPENFUEHRER("Gruppenführer"),
+    ZUGTRUPPFUEHRER("Zugtruppführer"),
+    ZUGFUEHRER("Zugführer");
 
-    private final String Name;
+    public final String Name;
 
-    private Dienstgraden(String name){
+    Dienstgraden(String name) {
         this.Name = name;
     }
 
+    static void printAll(){
+        Dienstgraden[] dienstgraden = Dienstgraden.values();
+        for (Dienstgraden d : dienstgraden) {
+            System.out.println(d.Name);
         }
+    }
 
-public class Aufzählungstypen_ENUM {
+
+    boolean istVorgesetzterVor(Dienstgraden d){
+        return this.ordinal() > d.ordinal();
+    }
 
 
     /*
@@ -37,4 +45,7 @@ public class Aufzählungstypen_ENUM {
         System.out.println(TRUPPFUEHRER.istVorgesetzterVor(HELFER));
         System.out.println(GRUPPENFUEHRER.istVorgesetzterVor(GRUPPENFUEHRER));
     }
+
+
 }
+
