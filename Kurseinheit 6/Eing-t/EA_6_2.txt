@@ -1,0 +1,1 @@
+Beim "new Fenster()" Aufruf, wird eine Thread gestartet, die eigentlich das Fenster zeigt. Beim Klick auf "Kick me!" Button wird eine neue Thread gestartet, die Thread von Fenster kurz unterbricht, und je nachdem "state" Wert durch AWT-Methode "setTitle" der Name von Fenster wechselt - danach wird neue Thread beendet. Danach laeuft Thread von Fenster weiter.
