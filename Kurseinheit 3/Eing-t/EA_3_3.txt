@@ -7,8 +7,9 @@ Auto und Boot erben von Fahrzeug, und Amphibienfahrzeug erbt von beide Auto und 
 c)
 Sei auch zwei Interfaces: Landtransport, Schiffahrttransport.
 Auto und Boot erben von Fahrzeug und implementieren Landtransport bzw. Schiffahrttransport.
-Semiamphibienfahrzeug erbt dann von Fahrzeug und implementiert beide Landtransport und Schiffahrttransport.
+Amphibienfahrzeug erbt dann von Fahrzeug und implementiert beide Landtransport und Schiffahrttransport.
 
+d)
 
 
 

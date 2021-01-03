@@ -1,4 +1,4 @@
-package einfuehrung_oop.ke1;
+//package einfuehrung_oop.ke1;
 
 //Fallunterscheidungen
 public class Aufgaben_1_2_a {
