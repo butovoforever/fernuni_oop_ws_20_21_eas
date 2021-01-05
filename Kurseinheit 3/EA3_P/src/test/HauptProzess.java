@@ -62,7 +62,7 @@ class Philosoph extends Thread {
 
 
     protected long ZuffaeligeZeit(){
-        long Zeit = (long) (Math.random()*10000);
+        long Zeit = (long) (Math.random()*20000);
         return Zeit;
     }
 
