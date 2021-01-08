@@ -51,6 +51,7 @@ public class Philosoph extends Thread {
             this.RechteStaebchen.staebchenAblegen();
 
             System.out.println(this.Name + " hat Staebchen abgelegt.");
+            //this.notifyAll();
 
         }
 

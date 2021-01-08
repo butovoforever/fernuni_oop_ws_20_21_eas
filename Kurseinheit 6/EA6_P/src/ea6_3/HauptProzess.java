@@ -17,15 +17,15 @@ public class HauptProzess {
         Philosoph Philosoph5 = new Philosoph("Philosoph_5", Staebchen5, Staebchen1);
 
         Philosoph1.start() ;
-        Philosoph1.dotry() ;
         Philosoph2.start() ;
-        Philosoph2.dotry() ;
         Philosoph3.start() ;
-        Philosoph3.dotry() ;
         Philosoph4.start() ;
-        Philosoph4.dotry() ;
         Philosoph5.start() ;
-        Philosoph5.dotry() ;
+        Philosoph1.dotry() ;
+        Philosoph2.dotry() ;
+        Philosoph3.dotry() ;
+         Philosoph4.dotry() ;
+         Philosoph5.dotry() ;
 
 
 

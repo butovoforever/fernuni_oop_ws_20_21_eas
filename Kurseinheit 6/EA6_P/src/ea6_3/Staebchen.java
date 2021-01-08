@@ -24,7 +24,7 @@ public class Staebchen {
 
     protected void staebchenAblegen(){
         this.besetzt = false;
-        this.notifyAll();
+        //this.notifyAll();
     }
 
 }
