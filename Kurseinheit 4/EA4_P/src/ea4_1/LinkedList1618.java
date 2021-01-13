@@ -1,7 +1,7 @@
 package ea3_1;
 
 /*
-Klasse Entry kann nicht umgebende Klasseelementen zugreifen, wenn er statisch ist - da gelten auch Klassparametern 
+Klasse Entry kann nicht umgebende Klasseelementen zugreifen, wenn er statisch ist - da gelten auch Klassparametern
 des ubgebenden Klasses.
 Deswegen muss man "static" loeschen, somit wird Parameter ET in Klasse "Entry" zugreifbar.
 */
