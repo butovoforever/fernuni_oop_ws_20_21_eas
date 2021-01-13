@@ -1,11 +1,17 @@
 package ea3_1;
 
 /*
-class LinkedList1618<ET> {
-    private Entry<ET> header = new Entry<ET>(null, null, null);
+Klasse Entry kann nicht umgebende Klasseelementen zugreifen, wenn er statisch ist - da gelten auch Klassparametern 
+des ubgebenden Klasses.
+Deswegen muss man "static" loeschen, somit wird Parameter ET in Klasse "Entry" zugreifbar.
 */
 
-class LinkedList1618 {
+class LinkedList1618<ET> {
+
+    /*
+    private Entry<ET> header = new Entry<ET>(null, null, null);
+    */
+
     private Entry header = new Entry(null, null, null);
 
     private int size = 0;
@@ -21,9 +27,11 @@ class LinkedList1618 {
     }
 
     public ET removeLast() {
+
         /*
-    	Entry<ET> lastEntry = header.previous;
-    	*/
+        Entry<ET> lastEntry = header.previous;
+        */
+
         Entry lastEntry = header.previous;
         if (lastEntry == header) throw new java.util.NoSuchElementException();
         lastEntry.previous.next = lastEntry.next;
@@ -33,9 +41,11 @@ class LinkedList1618 {
     }
 
     public void addLast(ET e) {
-    	/*
+
+        /*
         Entry<ET> newEntry = new Entry<ET>(e, header, header.previous);
         */
+
         Entry newEntry = new Entry(e, header, header.previous);
         header.previous.next = newEntry;
         header.previous = newEntry;
@@ -46,26 +56,25 @@ class LinkedList1618 {
         return size;
     }
 
-   /*
-    private static class Entry<T> {
-   */ 
-    private static class Entry {
-    	/*
-    	private T element;
+    /*
+    private static class Entry<ET> {
+    */
+    private class Entry {
+        private ET element;
 
-        private Entry<T> next;
+        /*
+        private Entry<ET> next;
 
-        private Entry<T> previous;
+        private Entry<ET> previous;
         */
-    	private ET element;
 
         private Entry next;
 
         private Entry previous;
 
         /*
-         private Entry(T element, Entry<T> next, Entry<T> previous) {
-         */
+        private Entry(ET element, Entry<ET> next, Entry<ET> previous) {
+        */
 
         private Entry(ET element, Entry next, Entry previous) {
             this.element = element;
@@ -79,8 +88,8 @@ class LinkedList1618 {
 
         /*
         private Entry<ET> next = header.next;
-		*/
-        
+        */
+
         private Entry next = header.next;
 
         boolean hasNext() {

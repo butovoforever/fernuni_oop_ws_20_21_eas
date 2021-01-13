@@ -16,6 +16,8 @@ public class HauptProzess {
         Philosoph Philosoph4 = new Philosoph("Philosoph_4", Staebchen4, Staebchen5);
         Philosoph Philosoph5 = new Philosoph("Philosoph_5", Staebchen5, Staebchen1);
 
+
+
         Philosoph1.start() ;
         Philosoph2.start() ;
         Philosoph3.start() ;
