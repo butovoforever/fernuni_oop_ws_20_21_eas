@@ -6,12 +6,11 @@ public class TestMaximumContainer {
 
         Äpfel n = new Äpfel(5);
         Äpfel o = new Äpfel(3);
-        Äpfel p = new Äpfel(10);
-
+        Äpfel p = new Äpfel(90);
 
         Birne k = new Birne(20);
         Birne l = new Birne(1);
-        Birne m = new Birne(40);
+        Birne m = new Birne(140);
 
         TestContainer.store(n);
         TestContainer.store(o);
@@ -20,6 +19,10 @@ public class TestMaximumContainer {
         TestContainer.store(l);
         TestContainer.store(m);
 
-        System.out.println(TestContainer.element.weight);
+        Obst x = TestContainer.get();
+
+        System.out.println(x.weight);
+
+
     }
 }
