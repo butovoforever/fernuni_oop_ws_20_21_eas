@@ -1,4 +1,4 @@
-package ea3_1;
+package ea4_1;
 
 /*
 Klasse Entry kann nicht umgebende Klasseelementen zugreifen, wenn er statisch ist - da gelten auch Klassparametern

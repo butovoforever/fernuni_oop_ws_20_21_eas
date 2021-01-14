@@ -1,0 +1,1 @@
+Sei ein Klasse A, der das Interface Comparable implementiert. T wird ein Typ, deren Objekten gegen Objekten der Klasse A vergleicht werden.
