@@ -1,0 +1,33 @@
+a) (8 Punkte)
+
+Nennen Sie vier Programmelemente, vor denen in Java der Modifikator final zulässig ist. Beschreiben Sie kurz, welche Auswirkung er dort jeweils hat.
+
+Klasse - Klasse kann nicht verebt werden;
+
+Variable - nach Initialisierung kann das Wert solcher Variable nicht veaendert werden;
+
+Methode - Methode kann nicht ueberschrieben werden;
+
+formale Methodeparameter - Parameter kann in Methoderumpf nicht veraendert werden;
+
+
+
+b) (3 Punkte)
+
+Nennen Sie zwei Programmelemente, vor denen in Java der Modifikator abstract zulässig ist. Beschreiben Sie kurz, welche Auswirkung er dort jeweils hat.
+
+Klasse - solche kann nicht instanziiert werden, aber kann vererbt werden.
+
+Methodende ins "abstract" Klasse - solche Methode kann bei Deklaration kein Rumpf haben (das muss dann bei Vererbung definiert sein).
+
+
+
+c) (6 Punkte)
+
+Nennen Sie drei Programmelemente, vor denen in Java der Modifikator static zulässig ist. Beschreiben Sie kurz, welche Auswirkung er dort jeweils hat.
+
+Methode - kann ohne Instanziierung der umgebenden Klasse aufgerufen werden.
+
+Variable - kann ohne Instanziierung der umgebenden Klasse zugegriffen werden.
+
+Klasse - kann nur inner sein; falls solche Klasse drinnen anderen Klasse gibt, kann deren (inneren Klasse) Instanz ohne umgebenden Klasseninstanz erzeugt werden.
