@@ -12,6 +12,7 @@ public class TestMaximumContainer {
         Birne l = new Birne(1);
         Birne m = new Birne(140);
 
+
         TestContainer.store(n);
         TestContainer.store(o);
         TestContainer.store(p);
