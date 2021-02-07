@@ -4,15 +4,38 @@ import java.io.*;
 
 public class SerializationToFilePersistence implements FullPersistence {
 
+    File neuOrdner;
+    File neuOrdnerWeg;
+
     /*
     1) AdressBook Objekt uebernehmen und
     2) Ins Datei ablegen
     */
 
+    SerializationToFilePersistence () {
+        this.neuOrdner = new File(System.getProperty("user.home")+"/addressbooks");
+        this.neuOrdnerWeg = neuOrdner;
+        neuOrdner.mkdirs();
+    }
+
+
 
     @Override
     public AddressBook loadBook(String name) throws AddressBookException {
-        return null;
+        AddressBook loadedBook = null;
+
+        try {
+            FileInputStream lesenBuch = new FileInputStream(neuOrdnerWeg + "/"+name);
+            ObjectInputStream lesenBuchObjekt = new ObjectInputStream(lesenBuch);
+            loadedBook = (AddressBook) lesenBuchObjekt.readObject();
+            lesenBuchObjekt.close();
+            lesenBuch.close();
+            return loadedBook;
+        } catch (IOException | ClassNotFoundException e) {
+            throw new AddressBookException(e.getMessage());
+        }
+
+//        return loadedBook;
     }
 
     @Override
@@ -20,23 +43,27 @@ public class SerializationToFilePersistence implements FullPersistence {
 
         try {
 
-            File neuOrdner = new File(System.getProperty("user.home")+"/addressbooks");
-            neuOrdner.mkdirs();
+
 
 //            File storedAddressbuch = new File(System.getProperty("user.home") + "/" + "addressbooks" + "/" + name);
-            File storedAddressbuch = new File(neuOrdner + "/" + name);
+            File storedAddressbuch = new File(neuOrdnerWeg + "/" + name);
             FileOutputStream dateiStrom = new FileOutputStream(storedAddressbuch);
             ObjectOutputStream writer = new ObjectOutputStream(dateiStrom);
             writer.writeObject(book);
             writer.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            writer.close();
+            dateiStrom.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new AddressBookException(e.getMessage());
         }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
 //        catch (Exception e) {
 //            e.printStackTrace();
 //        }
+
+
     }
 
 
