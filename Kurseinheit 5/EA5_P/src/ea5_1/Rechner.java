@@ -100,9 +100,9 @@ public class Rechner extends Frame {
         /* Objekte in Frame plazieren */
         newTextField.setBackground(white);
 
-        this.add(newTextField);
-        this.add(ziffernPanel);
-        this.add(operatorenPanel);
+        this.add(newTextField, BorderLayout.NORTH);
+        this.add(ziffernPanel, BorderLayout.CENTER);
+        this.add(operatorenPanel, BorderLayout.SOUTH);
 
 
         /* ... */
