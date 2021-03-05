@@ -57,8 +57,8 @@ public class Rechner extends Frame {
         /* FlowLayout fuer Ziffern- und Operatorpanel setzen */
 
 
-        ziffernPanel.setLayout(new FlowLayout(FlowLayout.LEADING));
-        operatorenPanel.setLayout(new FlowLayout(FlowLayout.TRAILING));
+        ziffernPanel.setLayout(new FlowLayout());
+        operatorenPanel.setLayout(new FlowLayout());
 
 
         /* Zifferntasten ggf. erzeugen und in Ziffernpanel einfuegen */
@@ -105,11 +105,42 @@ public class Rechner extends Frame {
         this.add(operatorenPanel, BorderLayout.SOUTH);
 
 
+        //event listener for digit buttons / es geht um EventListener fuer Zifferntasten
+        class ziffernPanelEventListener implements ActionListener {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                newTextField.setText(newTextField.getText()+((Button) e.getSource()).getLabel());
+            }
+        };
+
+        //add event listeners to digit buttons / EventListener zu Zifferntasten hinzufuegen
+        zifButton0.addActionListener(new ziffernPanelEventListener());
+        zifButton1.addActionListener(new ziffernPanelEventListener());
+        zifButton2.addActionListener(new ziffernPanelEventListener());
+        zifButton3.addActionListener(new ziffernPanelEventListener());
+        zifButton4.addActionListener(new ziffernPanelEventListener());
+        zifButton5.addActionListener(new ziffernPanelEventListener());
+        zifButton6.addActionListener(new ziffernPanelEventListener());
+        zifButton7.addActionListener(new ziffernPanelEventListener());
+        zifButton8.addActionListener(new ziffernPanelEventListener());
+        zifButton9.addActionListener(new ziffernPanelEventListener());
+
+
+        //text field is made uneditable / Eingabefeld wird nicht editierbar gemacht
+        this.newTextField.setEditable(false);
+
+        //Event-Handling für Operatortasten
+        
+
+
+
+
         /* ... */
     }
     /* ... */
     public static void main(String argv[]) {
         Rechner rechner = new Rechner();
+
         rechner.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
