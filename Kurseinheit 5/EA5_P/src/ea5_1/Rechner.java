@@ -18,31 +18,39 @@ public class Rechner extends Frame {
      */
 
     //Eingabetextfeld wird erqeugt:
-    TextField newTextField = new TextField();
+    private TextField newTextField = new TextField();
 
     // Ziffertasten sind erzeugt:
-    Button zifButton0 = new Button("0");
-    Button zifButton1 = new Button("1");
-    Button zifButton2 = new Button("2");
-    Button zifButton3 = new Button("3");
-    Button zifButton4 = new Button("4");
-    Button zifButton5 = new Button("5");
-    Button zifButton6 = new Button("6");
-    Button zifButton7 = new Button("7");
-    Button zifButton8 = new Button("8");
-    Button zifButton9 = new Button("9");
+    private boolean neueBerechnung = false;
+    private Button zifButton0 = new Button("0");
+    private Button zifButton1 = new Button("1");
+    private Button zifButton2 = new Button("2");
+    private Button zifButton3 = new Button("3");
+    private Button zifButton4 = new Button("4");
+    private Button zifButton5 = new Button("5");
+    private Button zifButton6 = new Button("6");
+    private Button zifButton7 = new Button("7");
+    private Button zifButton8 = new Button("8");
+    private Button zifButton9 = new Button("9");
 
 
     // Operatortasten sind erzeugt:
-    Button opButtonPlus = new Button("+");
-    Button opButtonMinus = new Button("-");
-    Button opButtonMult = new Button("*");
-    Button opButtonEqual = new Button("=");
+    private Button opButtonPlus = new Button("+");
+    private Button opButtonMinus = new Button("-");
+    private Button opButtonMult = new Button("*");
+    private Button opButtonEqual = new Button("=");
 
 
     // Panelen erzeugen:
-    Panel ziffernPanel = new Panel();
-    Panel operatorenPanel = new Panel();
+    private Panel ziffernPanel = new Panel();
+    private Panel operatorenPanel = new Panel();
+
+    ///special variables for processing of the operations
+    private int operand1 = 0;
+    private int operand2 = 0;
+    private int result = 0;
+    private float resultfloat = 0;
+    private String operator = "";
 
 
     public Rechner() {
@@ -109,6 +117,12 @@ public class Rechner extends Frame {
         class ziffernPanelEventListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //we check if we need to start new calculation and make the text field empty;
+                if (neueBerechnung){
+                    newTextField.setText("");
+                    neueBerechnung = false;
+                    neueBerechnungStarten();
+                }
                 newTextField.setText(newTextField.getText()+((Button) e.getSource()).getLabel());
             }
         };
@@ -130,13 +144,114 @@ public class Rechner extends Frame {
         this.newTextField.setEditable(false);
 
         //Event-Handling für Operatortasten
-        
+        opButtonPlus.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            operand1 = Integer.parseInt(newTextField.getText());
+                            operator = ((Button) e.getSource()).getLabel();
+                            //debugging
+                            //System.out.println(operator);
+                            newTextField.setText("");
+                        } catch (NumberFormatException exception) {
+                            System.out.println("Wrong format of 1st operand!");
+                            newTextField.setText("");
 
+                        }
 
+                    }
+                }
+        );
 
+        opButtonMinus.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            operand1 = Integer.parseInt(newTextField.getText());
+                            operator = ((Button) e.getSource()).getLabel();
+                            //debugging
+                            //System.out.println(operator);
+                            newTextField.setText("");
+                        } catch (NumberFormatException exception) {
+                            System.out.println("Wrong format of 1st operand!");
+                            newTextField.setText("");
+                        }
+                    }
+                }
+        );
 
+        opButtonMult.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            operand1 = Integer.parseInt(newTextField.getText());
+                            operator = ((Button) e.getSource()).getLabel();
+                            //debugging
+                            //System.out.println(operator);
+                            newTextField.setText("");
+                        } catch (NumberFormatException exception) {
+                            System.out.println("Wrong format of 1st operand!");
+                            newTextField.setText("");
+                        }
+                    }
+                }
+        );
+
+        opButtonEqual.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            operand2 = Integer.parseInt(newTextField.getText());
+
+                            if (operator == "+") {
+                                result = operand1 + operand2;
+                                resultfloat = ((float) operand1 + (float) operand2);
+
+                            } else if (operator == "-") {
+                                result = operand1 - operand2;
+                                resultfloat = ((float) operand1 - (float) operand2);
+
+                            } else if (operator == "*") {
+                                result = operand1 * operand2;
+                                resultfloat = ((float) operand1 * (float) operand2);
+
+                            }
+
+                            if (resultfloat > Integer.MAX_VALUE || resultfloat < Integer.MIN_VALUE) {
+                                System.out.println("Wrong format of result");
+                                newTextField.setText("");
+                                neueBerechnungStarten();
+                            }
+
+                            System.out.println("Correct format of result");
+
+                            newTextField.setText(Integer.toString(result));
+
+                            neueBerechnung = true;
+                        } catch (NumberFormatException exception) {
+                            System.out.println("Wrong format of 2nd operand!");
+                            newTextField.setText("");
+                        }
+                    }
+                }
+        );
         /* ... */
     }
+
+
+    public void neueBerechnungStarten () {
+        operand1 = 0;
+        operand2 = 0;
+        result = 0;
+        resultfloat = 0;
+        operator = "";
+    }
+
+
     /* ... */
     public static void main(String argv[]) {
         Rechner rechner = new Rechner();
